@@ -1,0 +1,362 @@
+/* --- Root Styles Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f3f4f6; /* Modern off-white background tint */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* --- Split Panel Workspace Wrapper --- */
+.portfolio-container {
+    background-color: #ffffff;
+    max-width: 1300px;
+    width: 100%;
+    height: 90vh; /* Fits perfectly on desktop viewports */
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    display: flex;
+    overflow: hidden; /* Separates the left static panel from right scrolling area */
+}
+
+/* --- LEFT SIDEBAR PANEL STYLING --- */
+.sidebar-panel {
+    width: 380px;
+    background-color: #f8fafc;
+    border-right: 1px solid #e2e8f0;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.institution-block {
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e2e8f0;
+    margin-bottom: 30px;
+}
+
+.university-name {
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #0f172a;
+    line-height: 1.3;
+}
+
+.faculty-name, .department-name {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-top: 4px;
+    line-height: 1.4;
+}
+
+.hero-profile-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-image-wrapper {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid #2563eb;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.15);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.greeting {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #2563eb;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.display-name {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.15;
+    margin-bottom: 12px;
+}
+
+.display-headline {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.short-bio {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: #64748b;
+    margin-bottom: 24px;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    padding: 12px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+}
+
+.btn-secondary:hover {
+    background-color: #f1f5f9;
+}
+
+/* --- RIGHT FLOWABLE AREA STYLING --- */
+.main-content-flow {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto; /* Adds a dedicated scrollbar inside the right card view area */
+    background-color: #ffffff;
+}
+
+.dashboard-card-section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 16px;
+    position: relative;
+    padding-bottom: 6px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #2563eb;
+    border-radius: 2px;
+}
+
+.paragraph-text {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #475569;
+    margin-bottom: 16px;
+}
+
+.intro-text {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.subsection-title {
+    font-size: 1.1rem;
+    color: #1e293b;
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+/* --- Clean Custom Lists --- */
+.styled-bullet-list {
+    list-style: none;
+}
+
+.styled-bullet-list li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.styled-bullet-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+/* --- Dashboard Responsive Grid Layout --- */
+.responsive-dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-top: 14px;
+}
+
+.responsive-dashboard-grid.columns-2 {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+/* --- Universal Component Cards --- */
+.grid-item-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.grid-item-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+/* --- Academic Module Styles --- */
+.card-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.card-badge.ucu {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.grid-item-card h3 {
+    font-size: 1.05rem;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.grid-item-card p {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* --- Project Card Custom Elements --- */
+.tool-tag {
+    font-size: 0.8rem;
+    color: #2563eb;
+    background-color: #eff6ff;
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.project-desc {
+    margin-bottom: 12px;
+}
+
+.takeaway-box {
+    background-color: #ffffff;
+    border-left: 3px solid #2563eb;
+    padding: 10px;
+    font-size: 0.85rem;
+    color: #475569;
+    line-height: 1.4;
+    border-radius: 0 4px 4px 0;
+}
+
+.full-width-card {
+    grid-column: 1 / -1; /* Forces the analysis card to scale full-width nicely */
+}
+
+/* --- Layout Footer Settings --- */
+.dashboard-footer {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 24px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.dashboard-footer p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 4px;
+}
+
+.action-trigger-btn {
+    background-color: #0f172a;
+    color: #ffffff;
+    border: none;
+    padding: 8px 24px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+}
+
+.action-trigger-btn:hover {
+    background-color: #1e293b;
+}
+
+/* --- Screen Responsiveness (For Mobile/Tablets) --- */
+@media (max-width: 900px) {
+    .portfolio-container {
+        flex-direction: column;
+        height: auto;
+        overflow: visible;
+    }
+
+    .sidebar-panel {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+        height: auto;
+    }
+
+    .main-content-flow {
+        height: auto;
+        overflow-y: visible;
+        padding: 24px;
+    }
+}
