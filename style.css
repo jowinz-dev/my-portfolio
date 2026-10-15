@@ -1,4 +1,4 @@
-
+/*Roboto reset*|
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +20,7 @@ body {
 }
 
 /* --- Split Panel Workspace Wrapper --- */
-portfolio-container {
+.portfolio-container {
     background-color: #ffffff;
     max-width: 1300px;
     width: 100%;
